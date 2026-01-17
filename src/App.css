@@ -1,0 +1,949 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  background-color: #f4f7fc;
+}
+
+.app-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e8f0fe 0%, #f4f7fc 100%);
+}
+
+/* ============================================
+   HEADER STYLES
+   ============================================ */
+.portal-header {
+  background: linear-gradient(135deg, #1a4d8f 0%, #2563a8 100%);
+  color: white;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.blood-icon {
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.logo-section h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.user-name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.hospital-name {
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+.main-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.view-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.toggle-btn {
+  padding: 0.75rem 2rem;
+  border: 2px solid #2563a8;
+  background: white;
+  color: #2563a8;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 1rem;
+}
+
+.toggle-btn.active {
+  background: #2563a8;
+  color: white;
+}
+
+.toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 168, 0.3);
+}
+
+/* ============================================
+   METRICS SECTION
+   ============================================ */
+.metrics-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.metric-card {
+  background: white;
+  padding: 1.75rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #2563a8;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.metric-card.alert {
+  border-left-color: #dc2626;
+  background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%);
+}
+
+.metric-card.success {
+  border-left-color: #16a34a;
+}
+
+.metric-title {
+  font-size: 0.875rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.metric-value {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.metric-card.alert .metric-value {
+  color: #dc2626;
+}
+
+/* ============================================
+   FORM STYLES
+   ============================================ */
+.demand-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2.5rem;
+}
+
+.form-title {
+  font-size: 1.5rem;
+  color: #1e293b;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.form-input {
+  padding: 0.75rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #2563a8;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap:0.5rem;
+cursor: pointer;
+font-size: 0.9375rem;
+color: #475569;
+}
+.radio-label input[type="radio"] {
+width: 18px;
+height: 18px;
+cursor: pointer;
+}
+.submit-button {
+width: 100%;
+padding: 1rem;
+background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+color: white;
+border: none;
+border-radius: 8px;
+font-size: 1rem;
+font-weight: 700;
+letter-spacing: 0.5px;
+cursor: pointer;
+transition: transform 0.2s, box-shadow 0.2s;
+text-transform: uppercase;
+}
+.submit-button:hover {
+transform: translateY(-2px);
+box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+}
+.submit-button:active {
+transform: translateY(0);
+}
+/* ============================================
+TABLE STYLES
+============================================ */
+.requests-table-container {
+background: white;
+padding: 2rem;
+border-radius: 12px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.table-title {
+font-size: 1.5rem;
+color: #1e293b;
+margin-bottom: 1.5rem;
+font-weight: 700;
+}
+.table-wrapper {
+overflow-x: auto;
+}
+.requests-table {
+width: 100%;
+border-collapse: collapse;
+}
+.requests-table thead {
+background: #f8fafc;
+}
+.requests-table th {
+padding: 1rem;
+text-align: left;
+font-size: 0.875rem;
+font-weight: 700;
+color: #475569;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+border-bottom: 2px solid #e2e8f0;
+}
+.requests-table td {
+padding: 1rem;
+border-bottom: 1px solid #f1f5f9;
+font-size: 0.9375rem;
+}
+.requests-table tbody tr:hover {
+background: #f8fafc;
+}
+.case-id {
+font-weight: 600;
+color: #1e293b;
+}
+.blood-type {
+display: inline-block;
+padding: 0.375rem 0.75rem;
+border-radius: 6px;
+font-weight: 700;
+font-size: 0.875rem;
+}
+.blood-Apos, .blood-Aneg { background: #dbeafe; color: #1e40af; }
+.blood-Bpos, .blood-Bneg { background: #fef3c7; color: #92400e; }
+.blood-ABpos, .blood-ABneg { background: #e0e7ff; color: #4338ca; }
+.blood-Opos, .blood-Oneg { background: #fee2e2; color: #991b1b; }
+.urgency-high {
+display: inline-block;
+padding: 0.375rem 0.75rem;
+background: #fee2e2;
+color: #991b1b;
+border-radius: 6px;
+font-weight: 600;
+font-size: 0.875rem;
+}
+.urgency-standard {
+display: inline-block;
+padding: 0.375rem 0.75rem;
+background: #f0fdf4;
+color: #166534;
+border-radius: 6px;
+font-weight: 600;
+font-size: 0.875rem;
+}
+.status-badge {
+display: inline-block;
+padding: 0.375rem 0.875rem;
+border-radius: 20px;
+font-size: 0.8125rem;
+font-weight: 600;
+}
+.status-matching {
+background: #fef3c7;
+color: #92400e;
+}
+.status-pledged {
+background: #dbeafe;
+color: #1e40af;
+}
+.status-enroute {
+background: #d1fae5;
+color: #065f46;
+}
+
+
+
+/* ============================================
+Business Model Canvas
+============================================ */
+
+
+.business-model-canvas {
+background: white;
+padding: 2.5rem;
+border-radius: 12px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+margin-top: 2rem;
+border-top: 5px solid #1a4d8f;
+}
+
+.bmc-title {
+font-size: 2rem;
+color: #1e293b;
+margin-bottom: 0.5rem;
+font-weight: 700;
+text-align: center;
+}
+
+.bmc-subtitle {
+font-size: 1rem;
+color: #64748b;
+text-align: center;
+margin-bottom: 2rem;
+}
+
+/* --- BMC Tabs (User's Provided Base) --- */
+.bmc-tabs {
+display: flex;
+gap: 1rem;
+margin-bottom: 2rem;
+flex-wrap: wrap;
+justify-content: center;
+border-bottom: 2px solid #e2e8f0;
+padding-bottom: 1rem;
+}
+
+.bmc-tab {
+padding: 0.75rem 1.5rem;
+border: none;
+background: transparent;
+color: #64748b;
+font-size: 0.9375rem;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.3s;
+border-radius: 8px 8px 0 0;
+display: flex;
+align-items: center;
+gap: 0.5rem;
+border-bottom: 3px solid transparent; /* Ensure space for active highlight */
+}
+
+.bmc-tab:hover {
+background: #f8fafc;
+color: #2563a8;
+}
+
+.bmc-tab.active {
+background: #2563a8;
+color: white;
+/* Overwrite the active background color for the bottom border */
+border-bottom: 3px solid #2563a8;
+}
+
+
+--- Content Headers --- /
+.bmc-content h3 {
+font-size: 1.5rem;
+color: #1e293b;
+margin-bottom: 1.5rem;
+border-left: 5px solid #1a4d8f;
+padding-left: 1rem;
+font-weight: 700;
+}
+
+/* --- Grids (Revenue, Value, Customer, Pricing) --- */
+.revenue-grid, .value-grid, .customer-grid, .pricing-grid, .addon-grid {
+display: grid;
+gap: 1.5rem;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.revenue-card, .value-card, .customer-card, .pricing-card {
+background: #f8fafc; /* Light blue/gray background */
+padding: 1.5rem;
+border-radius: 8px;
+border: 1px solid #e2e8f0;
+transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.revenue-card:hover, .value-card:hover, .customer-card:hover, .pricing-card:hover {
+box-shadow: 0 6px 16px rgba(37, 99, 168, 0.1);
+transform: translateY(-2px);
+}
+
+.revenue-icon {
+font-size: 1.5rem;
+margin-bottom: 0.5rem;
+}
+
+.revenue-card h4 {
+font-size: 1.125rem;
+color: #1a4d8f;
+margin-bottom: 0.5rem;
+font-weight: 700;
+}
+
+.revenue-card p {
+font-size: 0.9375rem;
+color: #475569;
+margin-bottom: 0.75rem;
+}
+
+/* List Styles (Revenue Card Details) */
+.revenue-card ul {
+list-style: none;
+padding-left: 0;
+font-size: 0.875rem;
+color: #64748b;
+}
+
+.revenue-card ul li:before {
+content: '•';
+color: #2563a8; /* Blue bullet point */
+font-weight: bold;
+display: inline-block;
+width: 1em;
+margin-left: -1em;
+}
+
+--- Value Cards --- /
+.value-card {
+border-left: 5px solid #16a34a; 
+}
+
+.value-number {
+background: #16a34a;
+color: white;
+display: inline-block;
+width: 30px;
+height: 30px;
+text-align: center;
+border-radius: 50%;
+font-weight: 700;
+line-height: 30px;
+margin-bottom: 0.75rem;
+}
+
+.value-card h4 {
+font-size: 1rem;
+color: #16a34a;
+margin-bottom: 0.5rem;
+font-weight: 600;
+}
+
+--- Customer Cards --- /
+.customer-card {
+padding-top: 1rem;
+border-top: 5px solid;
+position: relative;
+padding-bottom: 3rem; 
+}
+
+Tier Colors /
+.tier-enterprise { border-color: #dc2626; } 
+.tier-standard { border-color: #2563a8; }
+.tier-basic { border-color: #16a34a; } 
+.tier-government { border-color: #ca8a04; }
+
+.customer-badge {
+position: absolute;
+top: -10px;
+right: 10px;
+background: #1a4d8f;
+color: white;
+padding: 2px 8px;
+border-radius: 4px;
+font-size: 0.75rem;
+font-weight: 600;
+}
+
+/*
+.customer-value {
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+background: #e0f2fe; 
+padding: 0.5rem;
+border-radius: 0 0 8px 8px;
+font-size: 0.9rem;
+text-align: center;
+color: #1a4d8f;
+font-weight: 700;
+}
+*/
+.customer-needs ul {
+list-style: none;
+padding-left: 0;
+font-size: 0.875rem;
+color: #475569;
+}
+
+.customer-needs ul li:before {
+content: '•';
+color: #2563a8;
+font-weight: bold;
+display: inline-block;
+width: 1em;
+margin-left: -1em;
+}
+
+/* --- Pricing Cards --- */
+.pricing-card {
+border: 2px solid #e2e8f0;
+display: flex;
+flex-direction: column;
+min-height: 550px;
+}
+
+.pricing-header {
+text-align: center;
+padding: 1.5rem 0;
+border-bottom: 1px solid #e2e8f0;
+}
+
+.pricing-header h4 {
+font-size: 1.5rem;
+color: #1e293b;
+margin-bottom: 0.5rem;
+}
+
+.price {
+font-size: 3rem;
+font-weight: 700;
+color: #1a4d8f;
+line-height: 1;
+}
+
+.price span {
+font-size: 1rem;
+font-weight: 500;
+color: #64748b;
+}
+
+.billing {
+font-size: 0.875rem;
+color: #64748b;
+margin-top: 0.5rem;
+}
+
+.pricing-features {
+padding: 1.5rem;
+flex-grow: 1;
+}
+
+.feature-item {
+padding: 0.5rem 0;
+font-size: 0.9375rem;
+display: flex;
+align-items: center;
+border-bottom: 1px dashed #f1f5f9;
+}
+
+.included {
+color: #16a34a; /* Green checkmark */
+font-weight: 500;
+}
+
+.excluded {
+color: #94a3b8; /* Grayed out */
+text-decoration: line-through;
+}
+
+.best-for {
+text-align: center;
+background: #e0f2fe;
+padding: 0.75rem;
+border-radius: 0 0 8px 8px;
+font-size: 0.875rem;
+font-weight: 700;
+color: #1a4d8f;
+margin: -1.5rem -1.5rem 0;
+}
+
+.pricing-card.popular {
+border-color: #dc2626; /* Red border highlight */
+transform: scale(1.05);
+position: relative;
+z-index: 10;
+box-shadow: 0 8px 25px rgba(220, 38, 38, 0.2);
+}
+
+.popular-badge {
+position: absolute;
+top: -15px;
+left: 50%;
+transform: translateX(-50%);
+background: #dc2626;
+color: white;
+padding: 5px 15px;
+border-radius: 20px;
+font-size: 0.875rem;
+font-weight: 700;
+box-shadow: 0 4px 10px rgba(220, 38, 38, 0.4);
+}
+
+/* Pricing Add-Ons */
+.pricing-addons h4 {
+margin-top: 2rem;
+margin-bottom: 1rem;
+color: #1a4d8f;
+font-size: 1.25rem;
+font-weight: 700;
+}
+
+.addon-item {
+background: #e0f2fe; /* Light blue accent */
+padding: 0.75rem 1rem;
+border-radius: 4px;
+font-size: 0.9375rem;
+color: #1a4d8f;
+font-weight: 600;
+}
+
+/* --- Footer Metrics --- */
+.bmc-footer {
+margin-top: 3rem;
+padding-top: 1.5rem;
+border-top: 2px solid #e2e8f0;
+}
+
+.bmc-metrics {
+display: flex;
+justify-content: space-around;
+flex-wrap: wrap;
+gap: 1.5rem;
+}
+
+.metric-item {
+text-align: center;
+font-size: 0.9375rem;
+color: #475569;
+}
+
+.metric-item strong {
+display: block;
+font-size: 1.25rem;
+color: #1e293b;
+font-weight: 700;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+.pricing-card.popular {
+transform: scale(1.03);
+}
+}
+
+@media (max-width: 768px) {
+.business-model-canvas {
+padding: 1.5rem;
+}
+.bmc-title {
+font-size: 1.5rem;
+}
+.pricing-card.popular {
+transform: scale(1.0); /* Normalize scale on smaller screens */
+margin-bottom: 2rem;
+}
+.pricing-grid {
+grid-template-columns: 1fr;
+}
+.bmc-metrics {
+flex-direction: column;
+align-items: center;
+}
+}
+
+
+/* CoreTeamView.css */
+
+.core-team-view {
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    margin: 20px 0;
+}
+
+/* --- Typography and Headings --- */
+
+.team-title {
+    font-size: 2.2em;
+    color: #004a99; /* Deep blue for title */
+    margin-bottom: 5px;
+    font-weight: 700;
+    border-bottom: 3px solid #f0f4f8;
+    padding-bottom: 10px;
+}
+
+.team-subtitle {
+    font-size: 1.1em;
+    color: #667788;
+    margin-bottom: 30px;
+}
+
+/* --- Team Grid Layout --- */
+
+.team-grid {
+    display: grid;
+    /* Responsive Grid: 
+       1 column on small screens (min 0)
+       2 columns on medium screens (min 600px)
+       3 columns on large screens (min 900px) */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* --- Team Member Card --- */
+
+.team-card {
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid #007bff; /* Default accent color */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    background-color: #f7f9fc;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.team-role {
+    font-size: 1.5em;
+    font-weight: 800;
+    color: #007bff;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.team-name {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.team-focus {
+    font-size: 0.95em;
+    color: #555555;
+    line-height: 1.5;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 10px;
+    font-style: italic;
+}
+
+/* --- Role-Specific Accent Colors (Borders) --- */
+
+.team-card-ceo {
+    border-left-color: #e74c3c; /* Red */
+}
+
+.team-card-cmo {
+    border-left-color: #f39c12; /* Orange */
+}
+
+.team-card-cto {
+    border-left-color: #2ecc71; /* Green */
+}
+
+.team-card-coo {
+    border-left-color: #9b59b6; /* Purple */
+}
+
+.team-card-cfo {
+    border-left-color: #3498db; /* Sky Blue */
+}
+
+/* --- Footer Note --- */
+
+.org-chart-note {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #fffbe6;
+    border: 1px solid #ffe0b2;
+    border-radius: 8px;
+    color: #a0522d;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+/* ============================================
+APPLICATION FOOTER STYLES
+============================================ */
+/* Footer.css */
+
+.app-footer {
+    background-color: #333d47; /* Dark charcoal/slate background for contrast */
+    color: #f0f4f8; /* Light text color */
+    padding: 30px 20px;
+    border-top: 5px solid #e74c3c; /* A strong accent color, like the color of blood/emergency */
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align content to the top */
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px; /* Space between sections */
+}
+
+/* --- Footer Sections --- */
+
+.footer-section {
+    padding: 0 10px;
+}
+
+/* Branding Section */
+.footer-brand {
+    flex-basis: 50%; /* Takes up more space on wider screens */
+}
+
+.brand-name {
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #ffffff; /* Pure white for the brand name */
+}
+
+.mission-tag {
+    font-size: 0.95em;
+    color: #b0b8c4;
+    line-height: 1.5;
+}
+
+
+/* Contact Section */
+.footer-contact {
+    flex-basis: 40%;
+    text-align: right;
+}
+
+.footer-contact h5 {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #e74c3c; /* Use the accent color for the heading */
+}
+
+.footer-contact p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+/* Links */
+.footer-contact a {
+    color: #a0c3ff; /* Light blue for links */
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-contact a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Copyright */
+.copyright {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #4a545e; /* Subtle separator line */
+    font-size: 0.8em;
+    color: #7f8c9a;
+}
+
+/* --- Responsiveness --- */
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Stack vertically on smaller screens */
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-brand,
+    .footer-contact {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .footer-contact {
+        text-align: center; /* Center contact info when stacked */
+    }
+
+    .copyright {
+        text-align: center;
+    }
+}
